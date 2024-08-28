@@ -14,53 +14,117 @@
   <body
     class="bg-gray-900 text-white flex items-center justify-center min-h-screen"
   >
-    <div class="flex-col-reverse items-center justify-center mb-20">
+    <div class="flex-col-reverse items-center justify-center mb-20 mx-auto">
       <div>
-        <img src="./CaribeLogo.png" alt="Logo Caribe" />
+        <img src="./CaribeLogo.png" alt="Logo Caribe" class="mx-auto" />
       </div>
-      <div class="w-full mx-auto max-w-md bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-4 text-center">
-          Replica de Proveedores
-        </h1>
-        <form id="replication-form">
-          <div class="mb-4">
-            <label for="company" class="block text-sm font-medium"
-              >Compañía</label
-            >
-            <select
-              id="company"
-              name="company"
-              class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
-            >
-              <!-- Opciones se cargarán aquí -->
-            </select>
-          </div>
-          <div class="mb-4">
-            <label for="provider" class="block text-sm font-medium"
-              >Proveedor</label
-            >
-            <select
-              id="provider"
-              name="provider"
-              class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
-            >
-              <!-- Opciones se cargarán aquí -->
-            </select>
-          </div>
-          <button
-            type="submit"
-            class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded"
-          >
-            Ejecutar replicación
-          </button>
-        </form>
-        <!-- Mensaje de error -->
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Proveedores -->
         <div
-          id="message-container"
-          class="hidden fixed top-0 right-0 p-4 bg-red-600 text-white"
+          class="w-full mx-auto max-w-md bg-gray-800 p-6 rounded-lg shadow-lg"
         >
-          <!-- El mensaje será insertado aquí -->
+          <h1 class="text-2xl font-bold mb-4 text-center">
+            Replica de Proveedores
+          </h1>
+          <form id="replicate-provider-form">
+            <div class="mb-4">
+              <label for="company" class="block text-sm font-medium"
+                >Compañía</label
+              >
+              <select
+                id="company"
+                name="company"
+                class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
+              >
+                <!-- Opciones se cargarán aquí -->
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="provider" class="block text-sm font-medium"
+                >Proveedor</label
+              >
+              <select
+                id="provider"
+                name="provider"
+                class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
+              >
+                <!-- Opciones se cargarán aquí -->
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-2 px-4 bg-[#6AAB33] hover:bg-lime-600 text-white font-semibold rounded"
+            >
+              Ejecutar replicación de proveedor
+            </button>
+          </form>
+          <!-- Mensaje de error para proveedores -->
+          <div
+            id="message-container-provider"
+            class="hidden fixed top-0 right-0 p-4 bg-red-600 text-white"
+          >
+            <!-- El mensaje será insertado aquí -->
+          </div>
         </div>
+
+        <!-- Clientes -->
+        <div
+          class="w-full mx-auto max-w-md bg-gray-800 p-6 rounded-lg shadow-lg"
+        >
+          <h1 class="text-2xl font-bold mb-4 text-center">
+            Replica de Clientes
+          </h1>
+          <form id="replicate-client-form">
+            <div class="mb-4">
+              <label for="company-client" class="block text-sm font-medium"
+                >Compañía</label
+              >
+              <select
+                id="company-client"
+                name="company-client"
+                class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
+              >
+                <!-- Opciones se cargarán aquí -->
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="client" class="block text-sm font-medium"
+                >Cliente</label
+              >
+              <select
+                id="client"
+                name="client"
+                class="block w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
+              >
+                <!-- Opciones se cargarán aquí -->
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-2 px-4 bg-[#6AAB33] hover:bg-lime-600 text-white font-semibold rounded"
+            >
+              Ejecutar replicación de cliente
+            </button>
+          </form>
+          <!-- Mensaje de error para clientes -->
+          <div
+            id="message-container-client"
+            class="hidden fixed top-0 right-0 p-4 bg-red-600 text-white"
+          >
+            <!-- El mensaje será insertado aquí -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón para eliminar registros -->
+      <div class="mt-4">
+        <button
+          id="delete-button"
+          class="w-full py-2 px-4 bg-[#6AAB33] hover:bg-lime-600 text-white font-semibold rounded"
+        >
+          Limpiar Usuarios Conectados
+        </button>
       </div>
     </div>
 
